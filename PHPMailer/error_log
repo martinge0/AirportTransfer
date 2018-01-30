@@ -1,0 +1,4 @@
+[18-Jun-2017 15:36:33 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$mail' (T_VARIABLE) in /home/airpn0yq/public_html/PHPMailer/emailSender.php on line 21
+[18-Jun-2017 15:37:23 Europe/Sofia] PHP Fatal error:  Call to a member function IsHTML() on null in /home/airpn0yq/public_html/PHPMailer/emailSender.php on line 18
+[18-Jun-2017 15:38:11 Europe/Sofia] PHP Fatal error:  Call to a member function IsHTML() on null in /home/airpn0yq/public_html/PHPMailer/emailSender.php on line 18
+[18-Jun-2017 15:42:11 Europe/Sofia] PHP Parse error:  syntax error, unexpected '$mail' (T_VARIABLE) in /home/airpn0yq/public_html/PHPMailer/emailSender.php on line 21
