@@ -4,24 +4,31 @@
     $phone = strip_tags(htmlspecialchars($_POST['phone']));
     $message = strip_tags(htmlspecialchars($_POST['message']));
     
-    require 'PHPMailerAutoload.php';
+    require_once('PHPMailerAutoload.php');
 
-    $mail = new PHPMailer(); // create a new object
-    $mail->IsSMTP(); // enable SMTP
-    $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-    $mail->SMTPAuth = true; // authentication enabled
-    $mail->SMTPSecure = "ssl"; // secure transfer enabled REQUIRED for Gmail
-    $mail->Host = "smtp.gmail.com";
-    $mail->Port = 465 ; // or 587
+    $mail = new PHPMailer();
 
-    $mail->IsHTML(true);
-    $mail->Username = "taxi.burgas07@gmail.com";   
-    $mail->Password = "karnobat77";
+$mail->isSMTP();
+
+$mail->SMPTAuth = true;
+
+$mail->Host = 'airport-transfer-services-bg.com';
+
+$mail->Port = '25';
+
+$mail->isHTML();
+
+$mail->Username = 'form@airport-transfer-services-bg.com';
+
+$mail->Password = 'airport1234';
+
     
-    $mail->SetFrom("taxi.burgas07@gmail.com");
-    $mail->Subject = "Test";
-    $mail->Body="You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
-    $mail->AddAddress("pchelpbs@gmail.com");
+    $mail->SetFrom("form@airport-transfer-services-bg.com");
+    $mail->Subject = "Zapitvane";
+    
+    $mail->Body="Name: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
+    
+    $mail->AddAddress("taxi.burgas07@gmail.com");
     
     if (!$mail->send()) { 
     $result = array('status'=>"error", 'message'=>"Mailer Error: ".$mail->ErrorInfo);//
